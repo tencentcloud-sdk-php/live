@@ -30,6 +30,7 @@ use TencentCloud\Live\V20180801\Models as Models;
 
  * @method Models\AddLiveDomainResponse AddLiveDomain(Models\AddLiveDomainRequest $req) 添加域名，一次只能提交一个域名。域名必须已备案。
  * @method Models\AddLiveWatermarkResponse AddLiveWatermark(Models\AddLiveWatermarkRequest $req) 添加水印，成功返回水印 ID 后，需要调用[CreateLiveWatermarkRule](/document/product/267/32629)接口将水印 ID 绑定到流使用。
+水印数量上限 100，超过后需要先删除，再添加。
  * @method Models\BindLiveDomainCertResponse BindLiveDomainCert(Models\BindLiveDomainCertRequest $req) 域名绑定证书。
 注意：需先调用添加证书接口进行证书添加。获取到证书Id后再调用该接口进行绑定。
  * @method Models\CancelCommonMixStreamResponse CancelCommonMixStream(Models\CancelCommonMixStreamRequest $req) 该接口用来取消混流。用法与 mix_streamv2.cancel_mix_stream 基本一致。
@@ -106,6 +107,7 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
  * @method Models\DescribeAllStreamPlayInfoListResponse DescribeAllStreamPlayInfoList(Models\DescribeAllStreamPlayInfoListRequest $req) 输入某个时间点（1分钟维度），查询该时间点所有流的下行信息。
  * @method Models\DescribeAreaBillBandwidthAndFluxListResponse DescribeAreaBillBandwidthAndFluxList(Models\DescribeAreaBillBandwidthAndFluxListRequest $req) 海外分区直播计费带宽和流量数据查询。
  * @method Models\DescribeBillBandwidthAndFluxListResponse DescribeBillBandwidthAndFluxList(Models\DescribeBillBandwidthAndFluxListRequest $req) 直播计费带宽和流量数据查询。
+ * @method Models\DescribeCallbackRecordsListResponse DescribeCallbackRecordsList(Models\DescribeCallbackRecordsListRequest $req) 回调事件查询
  * @method Models\DescribeConcurrentRecordStreamNumResponse DescribeConcurrentRecordStreamNum(Models\DescribeConcurrentRecordStreamNumRequest $req) 查询并发录制路数，对慢直播和普通直播适用。
  * @method Models\DescribeDeliverBandwidthListResponse DescribeDeliverBandwidthList(Models\DescribeDeliverBandwidthListRequest $req) 查询直播转推计费带宽，查询时间范围最大支持3个月内的数据，时间跨度最长31天。
  * @method Models\DescribeGroupProIspPlayInfoListResponse DescribeGroupProIspPlayInfoList(Models\DescribeGroupProIspPlayInfoListRequest $req) 查询按省份和运营商分组的下行播放数据。
