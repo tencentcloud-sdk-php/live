@@ -22,20 +22,24 @@ use TencentCloud\Common\AbstractModel;
  *
  * @method integer getFlowContinueDuration() 获取HLS续流超时时间。
 取值范围[0，1800]。
+注意：此字段可能返回 null，表示取不到有效值。
  * @method void setFlowContinueDuration(integer $FlowContinueDuration) 设置HLS续流超时时间。
 取值范围[0，1800]。
+注意：此字段可能返回 null，表示取不到有效值。
  */
 class HlsSpecialParam extends AbstractModel
 {
     /**
      * @var integer HLS续流超时时间。
 取值范围[0，1800]。
+注意：此字段可能返回 null，表示取不到有效值。
      */
     public $FlowContinueDuration;
 
     /**
      * @param integer $FlowContinueDuration HLS续流超时时间。
 取值范围[0，1800]。
+注意：此字段可能返回 null，表示取不到有效值。
      */
     function __construct()
     {
