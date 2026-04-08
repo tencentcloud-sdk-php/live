@@ -20,29 +20,29 @@ use TencentCloud\Common\AbstractModel;
 /**
  * DescribeLiveAvatarScripts返回参数结构体
  *
- * @method array getInfoList() 获取数字人直播间话术信息列表。
- * @method void setInfoList(array $InfoList) 设置数字人直播间话术信息列表。
- * @method integer getLimitCreateNum() 获取限制可创建的数字人直播间话术总条数。
- * @method void setLimitCreateNum(integer $LimitCreateNum) 设置限制可创建的数字人直播间话术总条数。
- * @method integer getTotalNum() 获取当前数字人直播间话术总条数。
- * @method void setTotalNum(integer $TotalNum) 设置当前数字人直播间话术总条数。
+ * @method array getInfoList() 获取<p>数字人直播间话术信息列表。</p>
+ * @method void setInfoList(array $InfoList) 设置<p>数字人直播间话术信息列表。</p>
+ * @method integer getLimitCreateNum() 获取<p>限制可创建的数字人直播间话术总条数。</p>
+ * @method void setLimitCreateNum(integer $LimitCreateNum) 设置<p>限制可创建的数字人直播间话术总条数。</p>
+ * @method integer getTotalNum() 获取<p>当前数字人直播间话术总条数。</p>
+ * @method void setTotalNum(integer $TotalNum) 设置<p>当前数字人直播间话术总条数。</p>
  * @method string getRequestId() 获取唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  */
 class DescribeLiveAvatarScriptsResponse extends AbstractModel
 {
     /**
-     * @var array 数字人直播间话术信息列表。
+     * @var array <p>数字人直播间话术信息列表。</p>
      */
     public $InfoList;
 
     /**
-     * @var integer 限制可创建的数字人直播间话术总条数。
+     * @var integer <p>限制可创建的数字人直播间话术总条数。</p>
      */
     public $LimitCreateNum;
 
     /**
-     * @var integer 当前数字人直播间话术总条数。
+     * @var integer <p>当前数字人直播间话术总条数。</p>
      */
     public $TotalNum;
 
@@ -52,9 +52,9 @@ class DescribeLiveAvatarScriptsResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param array $InfoList 数字人直播间话术信息列表。
-     * @param integer $LimitCreateNum 限制可创建的数字人直播间话术总条数。
-     * @param integer $TotalNum 当前数字人直播间话术总条数。
+     * @param array $InfoList <p>数字人直播间话术信息列表。</p>
+     * @param integer $LimitCreateNum <p>限制可创建的数字人直播间话术总条数。</p>
+     * @param integer $TotalNum <p>当前数字人直播间话术总条数。</p>
      * @param string $RequestId 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
