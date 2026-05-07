@@ -20,14 +20,18 @@ use TencentCloud\Common\AbstractModel;
 /**
  * DescribeOriginStreamInfo请求参数结构体
  *
-
+ * @method string getDomainName() 获取<p>域名。</p>
+ * @method void setDomainName(string $DomainName) 设置<p>域名。</p>
  */
 class DescribeOriginStreamInfoRequest extends AbstractModel
 {
-
+    /**
+     * @var string <p>域名。</p>
+     */
+    public $DomainName;
 
     /**
-
+     * @param string $DomainName <p>域名。</p>
      */
     function __construct()
     {
@@ -42,6 +46,8 @@ class DescribeOriginStreamInfoRequest extends AbstractModel
         if ($param === null) {
             return;
         }
-
+        if (array_key_exists("DomainName",$param) and $param["DomainName"] !== null) {
+            $this->DomainName = $param["DomainName"];
+        }
     }
 }
