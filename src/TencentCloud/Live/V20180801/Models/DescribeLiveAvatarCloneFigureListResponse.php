@@ -18,19 +18,26 @@ namespace TencentCloud\Live\V20180801\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * CreateLiveAvatarRoom返回参数结构体
+ * DescribeLiveAvatarCloneFigureList返回参数结构体
  *
- * @method string getRoomId() 获取<p>数字人直播间 ID。</p>
- * @method void setRoomId(string $RoomId) 设置<p>数字人直播间 ID。</p>
+ * @method array getCloneFigureList() 获取<p>克隆形象列表</p>
+ * @method void setCloneFigureList(array $CloneFigureList) 设置<p>克隆形象列表</p>
+ * @method integer getTotalCount() 获取<p>克隆形象总个数</p><p>单位：个</p>
+ * @method void setTotalCount(integer $TotalCount) 设置<p>克隆形象总个数</p><p>单位：个</p>
  * @method string getRequestId() 获取唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  */
-class CreateLiveAvatarRoomResponse extends AbstractModel
+class DescribeLiveAvatarCloneFigureListResponse extends AbstractModel
 {
     /**
-     * @var string <p>数字人直播间 ID。</p>
+     * @var array <p>克隆形象列表</p>
      */
-    public $RoomId;
+    public $CloneFigureList;
+
+    /**
+     * @var integer <p>克隆形象总个数</p><p>单位：个</p>
+     */
+    public $TotalCount;
 
     /**
      * @var string 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
@@ -38,7 +45,8 @@ class CreateLiveAvatarRoomResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param string $RoomId <p>数字人直播间 ID。</p>
+     * @param array $CloneFigureList <p>克隆形象列表</p>
+     * @param integer $TotalCount <p>克隆形象总个数</p><p>单位：个</p>
      * @param string $RequestId 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -54,8 +62,17 @@ class CreateLiveAvatarRoomResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("RoomId",$param) and $param["RoomId"] !== null) {
-            $this->RoomId = $param["RoomId"];
+        if (array_key_exists("CloneFigureList",$param) and $param["CloneFigureList"] !== null) {
+            $this->CloneFigureList = [];
+            foreach ($param["CloneFigureList"] as $key => $value){
+                $obj = new LiveAvatarCloneFigureInfo();
+                $obj->deserialize($value);
+                array_push($this->CloneFigureList, $obj);
+            }
+        }
+
+        if (array_key_exists("TotalCount",$param) and $param["TotalCount"] !== null) {
+            $this->TotalCount = $param["TotalCount"];
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {

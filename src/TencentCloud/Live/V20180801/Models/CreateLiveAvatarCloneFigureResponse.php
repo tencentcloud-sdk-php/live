@@ -18,19 +18,26 @@ namespace TencentCloud\Live\V20180801\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * CreateLiveAvatarRoom返回参数结构体
+ * CreateLiveAvatarCloneFigure返回参数结构体
  *
- * @method string getRoomId() 获取<p>数字人直播间 ID。</p>
- * @method void setRoomId(string $RoomId) 设置<p>数字人直播间 ID。</p>
+ * @method string getTaskId() 获取<p>该图克隆形象生成的任务id</p>
+ * @method void setTaskId(string $TaskId) 设置<p>该图克隆形象生成的任务id</p>
+ * @method string getStatus() 获取<p>该克隆形象返回的状态</p><p>枚举值：</p><ul><li>SUBMITTING： 已受理</li><li>CHECKING： 检查中</li><li>QUEUE： 排队中</li><li>MAKING： 训练中</li><li>CONFIRMING： 效果确认</li><li>SUCCESS： 成功</li><li>FAIL： 失败</li></ul>
+ * @method void setStatus(string $Status) 设置<p>该克隆形象返回的状态</p><p>枚举值：</p><ul><li>SUBMITTING： 已受理</li><li>CHECKING： 检查中</li><li>QUEUE： 排队中</li><li>MAKING： 训练中</li><li>CONFIRMING： 效果确认</li><li>SUCCESS： 成功</li><li>FAIL： 失败</li></ul>
  * @method string getRequestId() 获取唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  */
-class CreateLiveAvatarRoomResponse extends AbstractModel
+class CreateLiveAvatarCloneFigureResponse extends AbstractModel
 {
     /**
-     * @var string <p>数字人直播间 ID。</p>
+     * @var string <p>该图克隆形象生成的任务id</p>
      */
-    public $RoomId;
+    public $TaskId;
+
+    /**
+     * @var string <p>该克隆形象返回的状态</p><p>枚举值：</p><ul><li>SUBMITTING： 已受理</li><li>CHECKING： 检查中</li><li>QUEUE： 排队中</li><li>MAKING： 训练中</li><li>CONFIRMING： 效果确认</li><li>SUCCESS： 成功</li><li>FAIL： 失败</li></ul>
+     */
+    public $Status;
 
     /**
      * @var string 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
@@ -38,7 +45,8 @@ class CreateLiveAvatarRoomResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param string $RoomId <p>数字人直播间 ID。</p>
+     * @param string $TaskId <p>该图克隆形象生成的任务id</p>
+     * @param string $Status <p>该克隆形象返回的状态</p><p>枚举值：</p><ul><li>SUBMITTING： 已受理</li><li>CHECKING： 检查中</li><li>QUEUE： 排队中</li><li>MAKING： 训练中</li><li>CONFIRMING： 效果确认</li><li>SUCCESS： 成功</li><li>FAIL： 失败</li></ul>
      * @param string $RequestId 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -54,8 +62,12 @@ class CreateLiveAvatarRoomResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("RoomId",$param) and $param["RoomId"] !== null) {
-            $this->RoomId = $param["RoomId"];
+        if (array_key_exists("TaskId",$param) and $param["TaskId"] !== null) {
+            $this->TaskId = $param["TaskId"];
+        }
+
+        if (array_key_exists("Status",$param) and $param["Status"] !== null) {
+            $this->Status = $param["Status"];
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
