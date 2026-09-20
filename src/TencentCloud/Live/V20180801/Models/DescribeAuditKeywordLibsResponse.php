@@ -18,33 +18,26 @@ namespace TencentCloud\Live\V20180801\Models;
 use TencentCloud\Common\AbstractModel;
 
 /**
- * CreateAuditKeywords返回参数结构体
+ * DescribeAuditKeywordLibs返回参数结构体
  *
- * @method array getKeywordIds() 获取<p>添加成功的关键词 Id 列表。</p>
- * @method void setKeywordIds(array $KeywordIds) 设置<p>添加成功的关键词 Id 列表。</p>
- * @method array getDupInfos() 获取<p>重复关键词列表。</p>
- * @method void setDupInfos(array $DupInfos) 设置<p>重复关键词列表。</p>
- * @method AuditKeywordInfo getKeywords() 获取<p>新增成功关键词列表</p>
- * @method void setKeywords(AuditKeywordInfo $Keywords) 设置<p>新增成功关键词列表</p>
+ * @method integer getTotal() 获取<p>满足条件的关键词库数量。</p>
+ * @method void setTotal(integer $Total) 设置<p>满足条件的关键词库数量。</p>
+ * @method array getInfos() 获取<p>关键词库信息列表。</p>
+ * @method void setInfos(array $Infos) 设置<p>关键词库信息列表。</p>
  * @method string getRequestId() 获取唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  * @method void setRequestId(string $RequestId) 设置唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
  */
-class CreateAuditKeywordsResponse extends AbstractModel
+class DescribeAuditKeywordLibsResponse extends AbstractModel
 {
     /**
-     * @var array <p>添加成功的关键词 Id 列表。</p>
+     * @var integer <p>满足条件的关键词库数量。</p>
      */
-    public $KeywordIds;
+    public $Total;
 
     /**
-     * @var array <p>重复关键词列表。</p>
+     * @var array <p>关键词库信息列表。</p>
      */
-    public $DupInfos;
-
-    /**
-     * @var AuditKeywordInfo <p>新增成功关键词列表</p>
-     */
-    public $Keywords;
+    public $Infos;
 
     /**
      * @var string 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
@@ -52,9 +45,8 @@ class CreateAuditKeywordsResponse extends AbstractModel
     public $RequestId;
 
     /**
-     * @param array $KeywordIds <p>添加成功的关键词 Id 列表。</p>
-     * @param array $DupInfos <p>重复关键词列表。</p>
-     * @param AuditKeywordInfo $Keywords <p>新增成功关键词列表</p>
+     * @param integer $Total <p>满足条件的关键词库数量。</p>
+     * @param array $Infos <p>关键词库信息列表。</p>
      * @param string $RequestId 唯一请求 ID，由服务端生成，每次请求都会返回（若请求因其他原因未能抵达服务端，则该次请求不会获得 RequestId）。定位问题时需要提供该次请求的 RequestId。
      */
     function __construct()
@@ -70,22 +62,17 @@ class CreateAuditKeywordsResponse extends AbstractModel
         if ($param === null) {
             return;
         }
-        if (array_key_exists("KeywordIds",$param) and $param["KeywordIds"] !== null) {
-            $this->KeywordIds = $param["KeywordIds"];
+        if (array_key_exists("Total",$param) and $param["Total"] !== null) {
+            $this->Total = $param["Total"];
         }
 
-        if (array_key_exists("DupInfos",$param) and $param["DupInfos"] !== null) {
-            $this->DupInfos = [];
-            foreach ($param["DupInfos"] as $key => $value){
-                $obj = new AuditKeywordInfo();
+        if (array_key_exists("Infos",$param) and $param["Infos"] !== null) {
+            $this->Infos = [];
+            foreach ($param["Infos"] as $key => $value){
+                $obj = new AuditKeywordLibInfo();
                 $obj->deserialize($value);
-                array_push($this->DupInfos, $obj);
+                array_push($this->Infos, $obj);
             }
-        }
-
-        if (array_key_exists("Keywords",$param) and $param["Keywords"] !== null) {
-            $this->Keywords = new AuditKeywordInfo();
-            $this->Keywords->deserialize($param["Keywords"]);
         }
 
         if (array_key_exists("RequestId",$param) and $param["RequestId"] !== null) {
